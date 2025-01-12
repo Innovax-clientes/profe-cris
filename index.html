@@ -895,268 +895,279 @@
             background: var(--color-brown-soft);
             color: var(--color-white);
         }
-/* Estilos gerais para o bônus */
-.bonus {
-  position: relative;
-  padding: var(--section-padding) 20px;
-  background: url("https://images.unsplash.com/photo-1529676468693-8857cd414bb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80") center/cover no-repeat;
-  color: var(--color-white);
-  text-align: center;
-  overflow: hidden;
-}
 
-/* Gradiente de sobreposição para contraste */
-.bonus::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg,
-              rgba(0, 0, 0, 0.8) 0%,
-              rgba(60, 60, 60, 0.4) 50%,
-              rgba(0, 0, 0, 0.7) 100%);
-  z-index: 1;
-}
+        /* Estilos gerais para o bônus */
+        .bonus {
+            position: relative;
+            padding: var(--section-padding) 20px;
+            background: url("https://images.unsplash.com/photo-1529676468693-8857cd414bb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80") center/cover no-repeat;
+            color: var(--color-white);
+            text-align: center;
+            overflow: hidden;
+        }
 
-/* Efeito sutil de estrelas ou brilho */
-.bonus::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background: transparent;
-  pointer-events: none;
-  background-image:
-    radial-gradient(circle, rgba(255, 255, 255, 0.6) 2px, transparent 2px),
-    radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
-  background-size: 50px 50px, 25px 25px;
-  background-position: 0 0, 25px 25px;
-  animation: twinkle 10s linear infinite;
-}
+        /* Gradiente de sobreposição para contraste */
+        .bonus::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg,
+                    rgba(0, 0, 0, 0.8) 0%,
+                    rgba(60, 60, 60, 0.4) 50%,
+                    rgba(0, 0, 0, 0.7) 100%);
+            z-index: 1;
+        }
 
-@keyframes twinkle {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.7;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+        /* Efeito sutil de estrelas ou brilho */
+        .bonus::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background: transparent;
+            pointer-events: none;
+            background-image:
+                radial-gradient(circle, rgba(255, 255, 255, 0.6) 2px, transparent 2px),
+                radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+            background-size: 50px 50px, 25px 25px;
+            background-position: 0 0, 25px 25px;
+            animation: twinkle 10s linear infinite;
+        }
 
-/* Waves decorativas */
-.wave-top, .wave-bottom {
-  position: absolute;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-  z-index: 3;
-}
+        @keyframes twinkle {
+            0% {
+                opacity: 1;
+            }
 
-.wave-top {
-  top: -80px;
-  transform: rotate(180deg);
-}
+            50% {
+                opacity: 0.7;
+            }
 
-.wave-bottom {
-  bottom: 0;
-}
+            100% {
+                opacity: 1;
+            }
+        }
 
-.wave-top svg,
-.wave-bottom svg {
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 80px;
-}
+        /* Waves decorativas */
+        .wave-top,
+        .wave-bottom {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 3;
+        }
 
-.shape-fill {
-  fill: var(--color-white);
-}
+        .wave-top {
+            top: -80px;
+            transform: rotate(180deg);
+        }
 
-/* Container dos conteúdos (garante sobreposição aos efeitos) */
-.bonus > .container {
-  position: relative;
-  z-index: 4;
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
+        .wave-bottom {
+            bottom: 0;
+        }
 
-/* Título do bônus */
-.bonus h2 {
-  font-size: 2.4rem;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
-  letter-spacing: 1px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
+        .wave-top svg,
+        .wave-bottom svg {
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 80px;
+        }
 
-/* Parcelamento */
-.parcelamento p {
-  font-weight: 700;
-  color: var(--color-orange);
-  margin-bottom: 1.5rem;
-  font-size: 1.3rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-}
+        .shape-fill {
+            fill: var(--color-white);
+        }
 
-/* Estilo para o cupom de desconto */
-.desconto-cupom {
-  margin: 20px auto;
-  padding: 15px 25px;
-  background: linear-gradient(135deg, #fffbea, #fff3c4);
-  border: 2px dashed #ffd700;
-  border-radius: 8px;
-  display: inline-block;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        /* Container dos conteúdos (garante sobreposição aos efeitos) */
+        .bonus>.container {
+            position: relative;
+            z-index: 4;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
 
-.desconto-cupom:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
+        /* Título do bônus */
+        .bonus h2 {
+            font-size: 2.4rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
 
-.desconto-cupom p {
-  margin: 0;
-  font-size: 1.1rem;
-  color: var(--color-dark);
-  font-weight: 600;
-}
+        /* Parcelamento */
+        .parcelamento p {
+            font-weight: 700;
+            color: var(--color-orange);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+        }
 
-.desconto-cupom strong {
-  color: var(--color-orange-dark);
-  font-weight: 700;
-  margin: 0 5px;
-}
+        /* Estilo para o cupom de desconto */
+        .desconto-cupom {
+            margin: 20px auto;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #fffbea, #fff3c4);
+            border: 2px dashed #ffd700;
+            border-radius: 8px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-/* Texto principal do bônus */
-.bonus p {
-  max-width: 600px;
-  margin: 0 auto 30px;
-  color: #000000;
-  font-size: 1.125rem;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-  line-height: 1.5;
-}
+        .desconto-cupom:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
 
-/* Bônus Capitu */
-.capitu {
-  background: linear-gradient(135deg, var(--color-orange), var(--color-orange-dark));
-  backdrop-filter: blur(5px);
-  color: var(--color-white);
-  padding: 2.5rem 2rem;
-  border-radius: 0.8rem;
-  margin: 2rem auto 0;
-  max-width: 600px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  position: relative;
-  animation: fadeInUp 0.7s ease forwards;
-  opacity: 0;
-}
+        .desconto-cupom p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--color-dark);
+            font-weight: 600;
+        }
 
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+        .desconto-cupom strong {
+            color: var(--color-orange-dark);
+            font-weight: 700;
+            margin: 0 5px;
+        }
 
-.capitu h3 {
-  margin-bottom: 0.8rem;
-  font-size: 1.8rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-  font-weight: 700;
-}
+        /* Texto principal do bônus */
+        .bonus p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: #000000;
+            font-size: 1.125rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            line-height: 1.5;
+        }
 
-.capitu h3 span {
-  color: var(--color-dark);
-  background: var(--color-white);
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.3rem;
-  font-size: 1.1rem;
-  margin-left: 0.3rem;
-}
+        /* Bônus Capitu */
+        .capitu {
+            background: linear-gradient(135deg, var(--color-orange), var(--color-orange-dark));
+            backdrop-filter: blur(5px);
+            color: var(--color-white);
+            padding: 2.5rem 2rem;
+            border-radius: 0.8rem;
+            margin: 2rem auto 0;
+            max-width: 600px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            animation: fadeInUp 0.7s ease forwards;
+            opacity: 0;
+        }
 
-.capitu-list {
-  list-style: none;
-  padding-left: 0;
-  margin: 1.5rem 0;
-  text-align: left;
-  font-size: 1rem;
-  line-height: 1.5;
-}
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
 
-.capitu-list li {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  position: relative;
-  padding-left: 1.5rem;
-}
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.capitu-list li::before {
-  content: "✓";
-  color: var(--color-white);
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translateY(-2px);
-}
+        .capitu h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            font-weight: 700;
+        }
 
-/* Botão para garantir o bônus */
-.btn-bonus-cta {
-  display: inline-block;
-  background-color: var(--color-white);
-  color: var(--color-orange);
-  padding: 1rem 2.5rem;
-  border-radius: 50px;
-  font-weight: 700;
-  margin-top: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-  letter-spacing: 0.5px;
-  font-size: 1.1rem;
-  text-decoration: none;
-}
+        .capitu h3 span {
+            color: var(--color-dark);
+            background: var(--color-white);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.3rem;
+            font-size: 1.1rem;
+            margin-left: 0.3rem;
+        }
 
-.btn-bonus-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
-  background: var(--color-brown-soft);
-  color: var(--color-white);
-}
+        .capitu-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 1.5rem 0;
+            text-align: left;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .bonus {
-    padding: 3rem 1rem;
-  }
-  .bonus h2 {
-    font-size: 2rem;
-  }
-  .capitu {
-    margin-top: 2rem;
-    padding: 1.5rem;
-  }
-  .capitu h3 {
-    font-size: 1.5rem;
-  }
-  .capitu h3 span {
-    font-size: 1rem;
-  }
-  .btn-bonus-cta {
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-  }
-}
+        .capitu-list li {
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .capitu-list li::before {
+            content: "✓";
+            color: var(--color-white);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateY(-2px);
+        }
+
+        /* Botão para garantir o bônus */
+        .btn-bonus-cta {
+            display: inline-block;
+            background-color: var(--color-white);
+            color: var(--color-orange);
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            letter-spacing: 0.5px;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        .btn-bonus-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+            background: var(--color-brown-soft);
+            color: var(--color-white);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .bonus {
+                padding: 3rem 1rem;
+            }
+
+            .bonus h2 {
+                font-size: 2rem;
+            }
+
+            .capitu {
+                margin-top: 2rem;
+                padding: 1.5rem;
+            }
+
+            .capitu h3 {
+                font-size: 1.5rem;
+            }
+
+            .capitu h3 span {
+                font-size: 1rem;
+            }
+
+            .btn-bonus-cta {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+        }
+
         /* ACESSO & DOWNLOADS - VISUAL APRIMORADO */
         .acesso {
             position: relative;
@@ -1968,114 +1979,177 @@
         .developed-by a:focus img {
             transform: scale(1.1);
         }
-  /* =========================
+
+        /* =========================
    GALERIA VERTICAL DE VÍDEOS (9:16)
    ========================= */
-.vertical-video-gallery {
-  background: #f9f9f9; /* Fundo levemente cinza para destacar */
-  padding: 60px 20px;
-  text-align: center;
-}
+        .vertical-video-gallery {
+            background: #f9f9f9;
+            /* Fundo levemente cinza para destacar */
+            padding: 60px 20px;
+            text-align: center;
+        }
 
-/* Título da seção, seguindo o estilo já existente */
-.vertical-video-gallery .section-title {
-  font-size: 2.6rem;
-  font-family: var(--font-heading, serif);
-  background: linear-gradient(45deg, var(--primary, #FFD700), var(--secondary, #FFB900));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  position: relative;
-  margin-bottom: 50px;
-  text-align: center;
-}
+        /* Título da seção, seguindo o estilo já existente */
+        .vertical-video-gallery .section-title {
+            font-size: 2.6rem;
+            font-family: var(--font-heading, serif);
+            background: linear-gradient(45deg, var(--primary, #FFD700), var(--secondary, #FFB900));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            margin-bottom: 50px;
+            text-align: center;
+        }
 
-.vertical-video-gallery .section-title::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  width: 50px;
-  height: 4px;
-  background: var(--secondary, #FFB900);
-  transform: translateX(-50%);
-  border-radius: 2px;
-}
+        .vertical-video-gallery .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            width: 50px;
+            height: 4px;
+            background: var(--secondary, #FFB900);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
 
-/* Grid que acomoda os 3 vídeos */
-.vertical-video-grid {
-  display: grid;
-  gap: 30px;
-  grid-template-columns: 1fr;
-  max-width: 1200px;
-  margin: 0 auto; /* Centraliza na tela */
-}
+        /* Grid que acomoda os 3 vídeos */
+        .vertical-video-grid {
+            display: grid;
+            gap: 30px;
+            grid-template-columns: 1fr;
+            max-width: 1200px;
+            margin: 0 auto;
+            /* Centraliza na tela */
+        }
 
-@media (min-width: 768px) {
-  .vertical-video-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+        @media (min-width: 768px) {
+            .vertical-video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
-@media (min-width: 1024px) {
-  .vertical-video-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+        @media (min-width: 1024px) {
+            .vertical-video-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
 
-/* Cada item (card) de vídeo */
-.vertical-video-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 20px;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        /* Cada item (card) de vídeo */
+        .vertical-video-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-/* Efeito hover */
-.vertical-video-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-}
+        /* Efeito hover */
+        .vertical-video-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
 
-/* Wrapper que força o aspect ratio 9:16 */
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  padding-top: 177.77%; /* 16/9 ao inverso => 100% / 0.5625 ~ 177.77% para vertical 9:16 */
-}
+        /* Wrapper que força o aspect ratio 9:16 */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 177.77%;
+            /* 16/9 ao inverso => 100% / 0.5625 ~ 177.77% para vertical 9:16 */
+        }
 
-/* Ajuste do iframe */
-.video-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 20px 20px 0 0; /* Arredonda somente o topo */
-}
+        /* Ajuste do iframe */
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px 20px 0 0;
+            /* Arredonda somente o topo */
+        }
 
-/* Informações do vídeo abaixo do iframe */
-.video-info {
-  padding: 20px;
-  text-align: left;
-}
+        /* Informações do vídeo abaixo do iframe */
+        .video-info {
+            padding: 20px;
+            text-align: left;
+        }
 
-.video-info h3 {
-  font-size: 1.2rem;
-  font-family: var(--font-heading, serif);
-  margin-bottom: 10px;
-  color: var(--text-dark, #444);
-}
+        .video-info h3 {
+            font-size: 1.2rem;
+            font-family: var(--font-heading, serif);
+            margin-bottom: 10px;
+            color: var(--text-dark, #444);
+        }
 
-.video-info p {
-  font-size: 0.95rem;
-  color: var(--text-light, #333);
-  line-height: 1.4;
-}
+        .video-info p {
+            font-size: 0.95rem;
+            color: var(--text-light, #333);
+            line-height: 1.4;
+        }
 
 
+        /* Botão Flutuante do WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .whatsapp-float:hover {
+            background-color: var(--primary);
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float i {
+            pointer-events: none;
+        }
+
+        /* Responsividade para o WhatsApp Float */
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 24px;
+            }
+        }
+
+        /* Scrollbar Personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FFFFFF;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
     </style>
 </head>
 
@@ -2226,66 +2300,68 @@
         </div>
     </section>
 
-   <!-- BONUS -->
-<section class="bonus" id="bonus">
-    <!-- Wave decorativa no topo -->
-    <div class="wave-top">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M985.66,63.56c-87.71,21.64-174.39,43.28-262.1,28.71
+    <!-- BONUS -->
+    <section class="bonus" id="bonus">
+        <!-- Wave decorativa no topo -->
+        <div class="wave-top">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path d="M985.66,63.56c-87.71,21.64-174.39,43.28-262.1,28.71
            C642,76.1,563.82,16.47,485.69,4.41,
            405-8,324.15,16.47,242.09,30.2
            c-77.1,13.24-154.08,13.24-231.18,0V120H1200V46.39
            C1112.29,24.75,1073.39,41.93,985.66,63.56Z" class="shape-fill">
-        </path>
-      </svg>
-    </div>
-  
-    <div class="container">
-      <h2>Benefícios Imperdíveis</h2>
-      
-      <div class="parcelamento">
-        <p>Parcelamento em até 12x</p>
-      </div>
-      
-      <!-- MENSAGEM DE DESCONTO/CUPOM -->
-      <div class="desconto-cupom">
-        <p>Insira o cupom <strong>PRO30</strong> e garanta a oferta!</p>
-      </div>
-      <!-- FIM DA MENSAGEM DE DESCONTO/CUPOM -->
-      
-      <p>Economia de tempo e menos estresse para organizar sua rotina pedagógica.</p>
-  
-      <!-- Bônus Capitu -->
-      <div class="capitu">
-        <h3>Bônus Exclusivo: <span>Capitu</span></h3>
-        <p>
-          Um projeto criado para apoiar famílias e crianças no processo de alfabetização...
-        </p>
-        <ul class="capitu-list">
-          <li>Acesso a materiais prontos para impressão</li>
-          <li>Estratégias lúdicas de incentivo à leitura</li>
-          <li>Suporte direto da especialista</li>
-        </ul>
-        <a href="https://pay.kiwify.com.br/ZHC5FJc?fbclid=PAZXh0bgNhZW0CMTEAAabCW7y9jxdQgRNIxutHrSIUQm2VlLBmyH2oBLoyyO5k2Xglbnd7GChNd6U_aem_b5eOGim7v7xRvgp5DRiiAQ"
-           class="btn-bonus-cta">
-           Quero Garantir o Bônus Capitu!
-        </a>
-      </div>
-    </div>
-  
-    <!-- Wave decorativa na parte inferior -->
-    <div class="wave-bottom">
-      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M985.66,63.56c-87.71,21.64-174.39,43.28-262.1,28.71
+                </path>
+            </svg>
+        </div>
+
+        <div class="container">
+            <h2>Benefícios Imperdíveis</h2>
+
+            <div class="parcelamento">
+                <p>Parcelamento em até 12x</p>
+            </div>
+
+            <!-- MENSAGEM DE DESCONTO/CUPOM -->
+            <div class="desconto-cupom">
+                <p>Insira o cupom <strong>PRO30</strong> e garanta a oferta!</p>
+            </div>
+            <!-- FIM DA MENSAGEM DE DESCONTO/CUPOM -->
+
+            <p>Economia de tempo e menos estresse para organizar sua rotina pedagógica.</p>
+
+            <!-- Bônus Capitu -->
+            <div class="capitu">
+                <h3>Bônus Exclusivo: <span>Capitu</span></h3>
+                <p>
+                    Um projeto criado para apoiar famílias e crianças no processo de alfabetização...
+                </p>
+                <ul class="capitu-list">
+                    <li>Acesso a materiais prontos para impressão</li>
+                    <li>Estratégias lúdicas de incentivo à leitura</li>
+                    <li>Suporte direto da especialista</li>
+                </ul>
+                <a href="https://pay.kiwify.com.br/ZHC5FJc?fbclid=PAZXh0bgNhZW0CMTEAAabCW7y9jxdQgRNIxutHrSIUQm2VlLBmyH2oBLoyyO5k2Xglbnd7GChNd6U_aem_b5eOGim7v7xRvgp5DRiiAQ"
+                    class="btn-bonus-cta">
+                    Quero Garantir o Bônus Capitu!
+                </a>
+            </div>
+        </div>
+
+        <!-- Wave decorativa na parte inferior -->
+        <div class="wave-bottom">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path d="M985.66,63.56c-87.71,21.64-174.39,43.28-262.1,28.71
            C642,76.1,563.82,16.47,485.69,4.41,
            405-8,324.15,16.47,242.09,30.2
            c-77.1,13.24-154.08,13.24-231.18,0V120H1200V46.39
            C1112.29,24.75,1073.39,41.93,985.66,63.56Z" class="shape-fill">
-        </path>
-      </svg>
-    </div>
-  </section>
-  
+                </path>
+            </svg>
+        </div>
+    </section>
+
 
 
     <!-- ACESSO -->
@@ -2360,56 +2436,52 @@
     </section>
     <section class="vertical-video-gallery">
         <h2 class="section-title">Galeria de Vídeos</h2>
-        
+
         <div class="vertical-video-grid">
-          <!-- Vídeo 1 -->
-          <div class="vertical-video-item">
-            <div class="video-wrapper">
-              <iframe
-                src="imgs/video3.mp4"
-                title="Vídeo Vertical 1"
-                allowfullscreen>
-              </iframe>
+            <!-- Vídeo 1 -->
+            <div class="vertical-video-item">
+                <div class="video-wrapper">
+                    <iframe src="imgs/video3.mp4" title="Vídeo Vertical 1" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3> Habilidades da bncc</h3>
+                    <p>Assista!</p>
+                </div>
             </div>
-            <div class="video-info">
-              <h3> Habilidades da bncc</h3>
-              <p>Assista!</p>
+
+            <!-- Vídeo 2 -->
+            <div class="vertical-video-item">
+                <div class="video-wrapper">
+                    <iframe src="imgs/video2.mp4" title="Vídeo Vertical 2" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3> Atividades para 1 ano</h3>
+                    <p>Assista!</p>
+                </div>
             </div>
-          </div>
-          
-          <!-- Vídeo 2 -->
-          <div class="vertical-video-item">
-            <div class="video-wrapper">
-              <iframe
-                src="imgs/video2.mp4"
-                title="Vídeo Vertical 2"
-                allowfullscreen>
-              </iframe>
+
+            <!-- Vídeo 3 -->
+            <div class="vertical-video-item">
+                <div class="video-wrapper">
+                    <iframe src="imgs/video1.mp4" title="Vídeo Vertical 3" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-info">
+                    <h3> Atividades para 2 ano</h3>
+                    <p>Assista!</p>
+                </div>
             </div>
-            <div class="video-info">
-              <h3> Atividades para 1 ano</h3>
-              <p>Assista!</p>
-            </div>
-          </div>
-          
-          <!-- Vídeo 3 -->
-          <div class="vertical-video-item">
-            <div class="video-wrapper">
-              <iframe
-                src="imgs/video1.mp4"
-                title="Vídeo Vertical 3"
-                allowfullscreen>
-              </iframe>
-            </div>
-            <div class="video-info">
-              <h3> Atividades para 2 ano</h3>
-              <p>Assista!</p>
-            </div>
-          </div>
         </div>
-      </section>
-      
-      
+    </section>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5521998413016" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+        aria-label="Fale conosco pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <!-- SOBRE NÓS -->
     <section class="sobre" id="sobre">
         <div class="wave-top">
@@ -2431,21 +2503,25 @@
                 <div class="info">
                     <h3>História da Criação</h3>
                     <p>
-                        O AlfabetizaPRO e o Projeto Capitu surgiram da paixão pela educação...
+                        Com formação em pedagogia, psicopedagogia, neuropedagogia e mestrado em educação, a
+                        idealizadora, Professora Cristiane Pereira, integrou a ciência cognitiva da leitura às demandas
+                        da BNCC, criando soluções que realmente fazem a diferença na prática pedagógica e no aprendizado
+                        das crianças.
+
                     </p>
-                    <h3>Jornada Profissional e Expertise</h3>
+                    <h3>Missão</h3>
                     <p>
-                        Criados por uma especialista em alfabetização com 14 anos de experiência...
+                        Promover uma alfabetização de qualidade, transformando vidas através do acesso ao conhecimento.
                     </p>
-                    <h3>Valores e Missão</h3>
+                    <h3>Valores </h3>
                     <p>
-                        Missão: Promover uma alfabetização de qualidade, transformando vidas...
-                    </p>
+                        Compromisso com a educação, respeito às diferenças, inovação pedagógica e foco em resultados
+                        reais. </p>
                 </div>
                 <!-- Foto -->
                 <figure class="professora-foto">
                     <img src="imgs/profe.jpg" alt="Professora Especialista" />
-                    <figcaption>Profª Cris, Especialista em Alfabetização</figcaption>
+                    <figcaption>Profª Cristiane Pereira, Especialista em Alfabetização</figcaption>
                 </figure>
             </div>
         </div>
@@ -2476,7 +2552,7 @@
                 <!-- Card 1: +12 anos lecionando -->
                 <div class="result-card">
                     <i class="fa-solid fa-chalkboard-user icon-result"></i>
-                    <div class="counter" data-target="12">
+                    <div class="counter" data-target="14">
                         <span class="number">0</span>
                     </div>
                     <p>Anos Lecionando</p>
@@ -2519,7 +2595,8 @@
             <h2>Garanta agora sua vaga no AlfabetizaPRO!</h2>
             <p>Comece 2025 com planejamento, confiança e resultados reais.</p>
 
-            <a href="https://pay.kiwify.com.br/ZHC5FJc?fbclid=PAZXh0bgNhZW0CMTEAAabCW7y9jxdQgRNIxutHrSIUQm2VlLBmyH2oBLoyyO5k2Xglbnd7GChNd6U_aem_b5eOGim7v7xRvgp5DRiiAQ" class="btn-final">
+            <a href="https://pay.kiwify.com.br/ZHC5FJc?fbclid=PAZXh0bgNhZW0CMTEAAabCW7y9jxdQgRNIxutHrSIUQm2VlLBmyH2oBLoyyO5k2Xglbnd7GChNd6U_aem_b5eOGim7v7xRvgp5DRiiAQ"
+                class="btn-final">
                 Quero transformar minha alfabetização!
                 <!-- Decorativo: “fa-magic” da Font Awesome se quiser -->
                 <!-- <i class="fa-solid fa-wand-magic-sparkles"></i> -->
@@ -2549,22 +2626,18 @@
     <!-- FOOTER -->
     <footer id="contact" aria-labelledby="contato">
         <div class="container">
-            <p id="contato"><strong>Fale comigo:</strong> contato@professoraredacao.com.br</p>
-            <p>&copy; 2025 Professora de Redação. Todos os direitos reservados.</p>
+            <p id="contato"><strong>Fale comigo:</strong> professoracristianeperlima@gmail.com</p>
+            <p>&copy; 2025 Professora Cristiane Pereira. Todos os direitos reservados.</p>
             <p>
                 <a href="#politica-cookies">Política de Cookies</a> |
                 <a href="#politica-privacidade">Política de Privacidade</a>
             </p>
             <div class="social-icons mt-3">
-                <a target="_blank" href="https://www.facebook.com/professoraredacao" aria-label="Facebook">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
+              
                 <a target="_blank" href="https://www.instagram.com/profcristianepereira/" aria-label="Instagram">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a target="_blank" href="https://www.youtube.com/@professoraredacao" aria-label="YouTube">
-                    <i class="fab fa-youtube"></i>
-                </a>
+               
             </div>
             <div class="developed-by mt-4">
                 <p>
