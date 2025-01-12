@@ -1980,116 +1980,114 @@
             transform: scale(1.1);
         }
 
-        /* =========================
+ /* =========================
    GALERIA VERTICAL DE VÍDEOS (9:16)
-   ========================= */
-        .vertical-video-gallery {
-            background: #f9f9f9;
-            /* Fundo levemente cinza para destacar */
-            padding: 60px 20px;
-            text-align: center;
-        }
+========================= */
+.vertical-video-gallery {
+    background: #f9f9f9; /* Fundo levemente cinza para destacar */
+    padding: 60px 20px;
+    text-align: center;
+}
 
-        /* Título da seção, seguindo o estilo já existente */
-        .vertical-video-gallery .section-title {
-            font-size: 2.6rem;
-            font-family: var(--font-heading, serif);
-            background: linear-gradient(45deg, var(--primary, #FFD700), var(--secondary, #FFB900));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            margin-bottom: 50px;
-            text-align: center;
-        }
+/* Título da seção */
+.vertical-video-gallery .section-title {
+    font-size: 2.6rem;
+    font-family: var(--font-heading, serif);
+    background: linear-gradient(45deg, var(--primary, #FFD700), var(--secondary, #FFB900));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    margin-bottom: 50px;
+    text-align: center;
+}
 
-        .vertical-video-gallery .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            width: 50px;
-            height: 4px;
-            background: var(--secondary, #FFB900);
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
+.vertical-video-gallery .section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    width: 50px;
+    height: 4px;
+    background: var(--secondary, #FFB900);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
 
-        /* Grid que acomoda os 3 vídeos */
-        .vertical-video-grid {
-            display: grid;
-            gap: 30px;
-            grid-template-columns: 1fr;
-            max-width: 1200px;
-            margin: 0 auto;
-            /* Centraliza na tela */
-        }
+/* Grid para os vídeos */
+.vertical-video-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 1fr;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-        @media (min-width: 768px) {
-            .vertical-video-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
+@media (min-width: 768px) {
+    .vertical-video-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
-        @media (min-width: 1024px) {
-            .vertical-video-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
+@media (min-width: 1024px) {
+    .vertical-video-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 
-        /* Cada item (card) de vídeo */
-        .vertical-video-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 20px;
-            background: #fff;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+/* Card do vídeo */
+.vertical-video-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        /* Efeito hover */
-        .vertical-video-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-        }
+.vertical-video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
 
-        /* Wrapper que força o aspect ratio 9:16 */
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-top: 177.77%;
-            /* 16/9 ao inverso => 100% / 0.5625 ~ 177.77% para vertical 9:16 */
-        }
+/* Container que força o aspect ratio 9:16 */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 177.77%;  /* 9:16: (16/9 * 100 ≈ 177.77%) */
+    overflow: hidden;
+    border-radius: 20px 20px 0 0; /* Arredonda somente o topo */
+}
 
-        /* Ajuste do iframe */
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 20px 20px 0 0;
-            /* Arredonda somente o topo */
-        }
+/* Estilo para o elemento <video> */
+.video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Preenche todo o container mantendo a proporção */
+    display: block;     /* Remove espaços indesejados */
+    border: none;
+}
 
-        /* Informações do vídeo abaixo do iframe */
-        .video-info {
-            padding: 20px;
-            text-align: left;
-        }
+/* Informações abaixo do vídeo */
+.video-info {
+    padding: 20px;
+    text-align: left;
+}
 
-        .video-info h3 {
-            font-size: 1.2rem;
-            font-family: var(--font-heading, serif);
-            margin-bottom: 10px;
-            color: var(--text-dark, #444);
-        }
+.video-info h3 {
+    font-size: 1.2rem;
+    font-family: var(--font-heading, serif);
+    margin-bottom: 10px;
+    color: var(--text-dark, #444);
+}
 
-        .video-info p {
-            font-size: 0.95rem;
-            color: var(--text-light, #333);
-            line-height: 1.4;
-        }
+.video-info p {
+    font-size: 0.95rem;
+    color: var(--text-light, #333);
+    line-height: 1.4;
+}
 
 
         /* Botão Flutuante do WhatsApp */
@@ -2436,51 +2434,58 @@
     </section>
     <section class="vertical-video-gallery">
         <h2 class="section-title">Galeria de Vídeos</h2>
-
+      
         <div class="vertical-video-grid">
-            <!-- Vídeo 1 -->
-            <div class="vertical-video-item">
-                <div class="video-wrapper">
-                    <iframe src="imgs/video3.mp4" title="Vídeo Vertical 1" allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-info">
-                    <h3> Habilidades da bncc</h3>
-                    <p>Assista!</p>
-                </div>
+          <!-- Vídeo 1 -->
+          <div class="vertical-video-item">
+            <div class="video-wrapper">
+              <video muted controls>
+                <source src="imgs/video3.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+              </video>
             </div>
-
-            <!-- Vídeo 2 -->
-            <div class="vertical-video-item">
-                <div class="video-wrapper">
-                    <iframe src="imgs/video2.mp4" title="Vídeo Vertical 2" allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-info">
-                    <h3> Atividades para 1 ano</h3>
-                    <p>Assista!</p>
-                </div>
+            <div class="video-info">
+              <h3>Habilidades da BNCC</h3>
+              <p>Assista!</p>
             </div>
-
-            <!-- Vídeo 3 -->
-            <div class="vertical-video-item">
-                <div class="video-wrapper">
-                    <iframe src="imgs/video1.mp4" title="Vídeo Vertical 3" allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-info">
-                    <h3> Atividades para 2 ano</h3>
-                    <p>Assista!</p>
-                </div>
+          </div>
+      
+          <!-- Vídeo 2 -->
+          <div class="vertical-video-item">
+            <div class="video-wrapper">
+              <video muted controls>
+                <source src="imgs/video2.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+              </video>
             </div>
+            <div class="video-info">
+              <h3>Atividades para 1º ano</h3>
+              <p>Assista!</p>
+            </div>
+          </div>
+      
+          <!-- Vídeo 3 -->
+          <div class="vertical-video-item">
+            <div class="video-wrapper">
+              <video muted controls>
+                <source src="imgs/video1.mp4" type="video/mp4">
+                Seu navegador não suporta o elemento de vídeo.
+              </video>
+            </div>
+            <div class="video-info">
+              <h3>Atividades para 2º ano</h3>
+              <p>Assista!</p>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <!-- Botão Flutuante do WhatsApp -->
-    <a href="https://wa.me/67996561990" target="_blank" rel="noopener noreferrer"
-        aria-label="Fale conosco pelo WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+      </section>
+      
+  
+   <!-- Botão Flutuante do WhatsApp -->
+   <a href="https://wa.me/67996561990" class="whatsapp-float" target="_blank" rel="noopener noreferrer"
+   aria-label="Fale conosco pelo WhatsApp">
+   <i class="fab fa-whatsapp"></i>
+</a>
 
     <!-- SOBRE NÓS -->
     <section class="sobre" id="sobre">
